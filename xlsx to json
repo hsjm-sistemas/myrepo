@@ -1,0 +1,13 @@
+import pandas as pd
+
+def excel_a_json(ruta_archivo_excel, ruta_archivo_json):
+    # Leer el archivo Excel
+    df = pd.read_excel(ruta_archivo_excel)
+
+    # Convertir el DataFrame a formato JSON
+    df.to_json(ruta_archivo_json, orient="records", lines=False, force_ascii=False)
+
+    print(f"El archivo se ha convertido exitosamente a JSON y guardado en: {ruta_archivo_json}")
+
+# Ejemplo de uso:
+excel_a_json("python/test.xlsx", "python/test.json")
