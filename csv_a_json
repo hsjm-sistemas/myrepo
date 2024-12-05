@@ -1,0 +1,13 @@
+import pandas as pd
+
+def csv_a_json(ruta_archivo_csv, ruta_archivo_json):
+    # Leer el archivo CSV
+    df = pd.read_csv(ruta_archivo_csv)
+
+    # Convertir el DataFrame a formato JSON
+    df.to_json(ruta_archivo_json, orient="records", lines=False, force_ascii=False)
+
+    print(f"El archivo CSV se ha convertido exitosamente a JSON y guardado en: {ruta_archivo_json}")
+
+# Ejemplo de uso:
+csv_a_json("python/test.csv", "python/test.json")
